@@ -37,11 +37,11 @@ export class EventosService {
   EventoTalleres=[
     {
       idtar: '100',
-      titulo: 'Taller de Git y Github',
+      titulo: 'Taller de Github',
       fecha: '12/02/2022',
       lugar: 'Salón 4',
       duracion: '2 horas',
-      descripcion: 'Taller sobre Git y Github',
+      descripcion: 'Taller sobre Github',
       imgtar:'./assets/img/Github.png'
     },
     {
