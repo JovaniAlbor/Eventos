@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
 import { EventosService } from '../eventos.service';  // Inyectar el servicio
-import { IonicModule } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-detalle-evento',
@@ -11,7 +10,11 @@ import { IonicModule } from '@ionic/angular';
 })
 export class DetalleEventoComponent implements OnInit {
   conferenciaId: string | null = null;  // Inicializar como null o string (puede ser null)
-  conferencia: any;  // Usamos conferencia en lugar de evento
+  conferencia: any;  
+  tallerId: string | null = null;  // Inicializar como null o string (puede ser null)
+  taller: any;  
+  concursoId: string | null = null;  // Inicializar como null o string (puede ser null)
+  concurso: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,7 +31,29 @@ export class DetalleEventoComponent implements OnInit {
       } else {
         console.error('ID de conferencia no encontrado.');
       }
+      
+    }),
+    this.route.paramMap.subscribe(params => {
+      this.tallerId = params.get('id'); // Obtener el id de la URL
+
+      if (this.tallerId) {  // Asegurarnos de que el id no sea null
+        this.taller = this.eventosService.obtenerEventoPorId2(this.tallerId); // Obtener la conferencia usando el servicio
+      } else {
+        console.error('ID de conferencia no encontrado.');
+      }
+      
+    }),
+    this.route.paramMap.subscribe(params => {
+      this.concursoId = params.get('id'); // Obtener el id de la URL
+
+      if (this.concursoId) {  // Asegurarnos de que el id no sea null
+        this.concurso = this.eventosService.obtenerEventoPorId3(this.concursoId); // Obtener la conferencia usando el servicio
+      } else {
+        console.error('ID de conferencia no encontrado.');
+      }
+      
     });
   }
-}
+  }
+
 
