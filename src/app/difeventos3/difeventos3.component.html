@@ -1,0 +1,25 @@
+
+<ion-card-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="12" size-md="6" size-lg="4" size-xl="3" *ngFor="let conc of Concursos">
+        
+        <ion-card>
+          
+          <img class="imagen" alt="" src="{{conc.imgconc}}" />
+          <ion-card-header>
+            <ion-card-title class="titulo">{{conc.titulo}}</ion-card-title>
+            <ion-card-subtitle>
+                <div>{{ conc.descripcion }}</div>
+                <div>{{ conc.fecha }}</div>
+                <div>{{ conc.lugar }}</div>
+              </ion-card-subtitle>
+          </ion-card-header>  
+          <ion-button color="success" expand="block" fill="clear" shape="round" (click)="verDetallesEvento(conc.idconc)">
+            Ver detalles
+          </ion-button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-card-content>
