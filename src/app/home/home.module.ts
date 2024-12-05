@@ -5,9 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { DifeventosComponent } from '../difeventos/difeventos.component';
-import { Difeventos2Component } from '../difeventos2/difeventos2.component';
-import { Difeventos3Component } from '../difeventos3/difeventos3.component';
 
 
 @NgModule({
@@ -17,6 +14,6 @@ import { Difeventos3Component } from '../difeventos3/difeventos3.component';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, DifeventosComponent, Difeventos2Component,Difeventos3Component]
+  declarations: [HomePage,]
 })
 export class HomePageModule {}

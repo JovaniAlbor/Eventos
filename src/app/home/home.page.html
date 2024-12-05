@@ -1,11 +1,35 @@
-<ion-content class="inicio">
-    <!-- Botón para navegar a Conferencias -->
-    <ion-button color="" (click)="navigateToComponent('/difeventos')">Conferencias</ion-button>
-    
-    <!-- Botón para navegar a Talleres -->
-    <ion-button color="" (click)="navigateToComponent('/difeventos2')">Talleres</ion-button>
-    
-    <!-- Botón para navegar a Concursos -->
-    <ion-button color=""(click)="navigateToComponent('/difeventos3')">Concursos</ion-button>
-  </ion-content>
+<ion-content>
+    <!-- Mostrar Conferencias -->
+    <ion-card *ngFor="let conferencia of conferencias">
+      <img src="'./assets/img/Angular.jpg'">
+      <ion-card-header>
+        <ion-card-title>{{ conferencia.titulo }}</ion-card-title>
+        <ion-card-subtitle>{{ conferencia.fecha }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ conferencia.descripcion }}</p>
+      </ion-card-content>
+    </ion-card>
+  
+    <!-- Mostrar Eventos -->
+    <ion-card *ngFor="let taller of talleres">
+      <ion-card-header>
+        <ion-card-title>{{ taller.titulo }}</ion-card-title>
+        <ion-card-subtitle>{{ taller.fecha }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ taller.descripcion }}</p>
+      </ion-card-content>
+    </ion-card>
+  <!-- Mostrar Eventos -->
+  <ion-card *ngFor="let concurso of concursos">
+    <ion-card-header>
+      <ion-card-title>{{ concurso.titulo }}</ion-card-title>
+      <ion-card-subtitle>{{ concurso.fecha }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ concurso.descripcion }}</p>
+    </ion-card-content>
+  </ion-card>
+  
   
