@@ -9,7 +9,7 @@ const Conferencias = sequelize.define('Conferencias', {
     lugar: { type: DataTypes.STRING, },
     duracion: { type: DataTypes.STRING, },
     descripcion: { type: DataTypes.STRING,  },
-    
+    imgcon: { type: DataTypes.STRING, },
 
 }, {
     tableName: 'Conferencias', // Nombre de la tabla en MySQL
