@@ -3,7 +3,6 @@ const cors = require('cors');
 const ConferenciasRoutes = require('./routes/Conferenciasrout');
 const TalleresRoutes = require('./routes/Talleresrout');
 const ConcursosRoutes = require('./routes/Concursosrout');
-
 const app = express();
 
 app.use(cors({
@@ -16,6 +15,7 @@ app.use(express.json());
 app.use('/Conferencias', ConferenciasRoutes);
 app.use('/Talleres', TalleresRoutes);
 app.use('/Concursos', ConcursosRoutes); 
+
 
 const sequelize = require('./config/database');
 
