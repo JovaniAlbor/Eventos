@@ -25,18 +25,6 @@
 #container a {
   text-decoration: none;
 }
-ion-button{
-  display: flex;               // Usamos flexbox para centrar los elementos
-  flex-direction: column;      // Aseguramos que los botones estén en una columna
-  align-items: center;         // Centra los elementos horizontalmente
-  justify-content: center;     // Centra los elementos verticalmente si es necesario
-  height: auto;               // Hace que el contenedor ocupe toda la altura de la ventana
-    --background: #cd5151;    // Color de fondo
-    --color: rgb(0, 0, 0);           // Color del texto
-    --border-radius: 12px;    // Radio de bordes
-    --padding: 12px 24px;     // Relleno del botón
-    margin-bottom: 100px;
-  }
   .inicio{
     background-color: white;
     background: white;
@@ -45,3 +33,14 @@ ion-button{
     --background: #f0f0f0; /* Cambia el color de fondo */
   }
   
+  ion-card-img {
+    width: 10%; /* Asegúrate de que la imagen ocupe el espacio disponible */
+    height: 10%;
+  }
+  ion-card{
+    margin: 10px; /* Ajusta el espacio entre las tarjetas */
+    background-color: white; /* Cambia el color de fondo de las tarjetas */
+    border-radius: 10px; /* Ajusta el radio de curvatura de las tarjetas */
+    width:350px;
+    height: 350px;
+  }

@@ -14,16 +14,16 @@ export class eventosService {
 
   // Obtener conferencias
   getConferencias(): Observable<any> {
-    return this.http.get(this.apiUrlConferencias);
+    return this.http.get<any[]>(this.apiUrlConferencias);
   }
 
   // Obtener eventos
   getTalleres(): Observable<any> {
-    return this.http.get(this.apiUrlTalleres);
+    return this.http.get<any[]>(this.apiUrlTalleres);
   }
 
   // Obtener ponentes
   getConcursos(): Observable<any> {
-    return this.http.get(this.apiUrlConcursos);
+    return this.http.get<any[]>(this.apiUrlConcursos);
   }
 }
