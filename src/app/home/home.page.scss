@@ -1,3 +1,9 @@
+ion-header{
+  --background: white !important; /* Cambia el color de fondo del header */
+  text-align: center; /* Centra el texto en el header */
+  width: auto;
+  background-color: white !important; /* Cambia el color de fondo del header */
+}
 #container {
   text-align: center;
 
@@ -43,4 +49,12 @@
     border-radius: 10px; /* Ajusta el radio de curvatura de las tarjetas */
     width:350px;
     height: 350px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  ion-searchbar{
+    margin: 10px; /* Ajusta el espacio entre el header y el searchbar */
+    width:auto; 
+    --background:white;
+    color: black;
   }

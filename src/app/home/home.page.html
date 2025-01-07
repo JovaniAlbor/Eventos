@@ -1,29 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Eventos disponibles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
-    <!-- Mostrar Conferencias -->
-    <ion-card *ngFor="let conferencia of conferencias">
-      <img [src]="conferencia.imgcon">
-      <ion-card-header>
-        <ion-card-title>{{ conferencia.titulo }}</ion-card-title>
-        <ion-card-subtitle>{{ conferencia.fecha }}</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        <p>{{ conferencia.descripcion }}</p>
-      </ion-card-content>
-    </ion-card>
-  
-    <!-- Mostrar Eventos -->
-    <ion-card *ngFor="let taller of talleres">
-      <img [src]="taller.imgtar">
-      <ion-card-header>
-        <ion-card-title>{{ taller.titulo }}</ion-card-title>
-        <ion-card-subtitle>{{ taller.fecha }}</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        <p>{{ taller.descripcion }}</p>
-      </ion-card-content>
-    </ion-card>
-  <!-- Mostrar Eventos -->
-  <ion-card *ngFor="let concurso of concursos">
+  <!-- Barra de búsqueda -->
+  <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="onSearch()" debounce="500" placeholder="Buscar por título o palabra clave"></ion-searchbar>
+
+  <!-- Mostrar Conferencias -->
+  <ion-card *ngFor="let conferencia of filteredConferencias" (click)="goToEventDetails(conferencia)">
+    <img [src]="conferencia.imgcon">
+    <ion-card-header>
+      <ion-card-title>{{ conferencia.titulo }}</ion-card-title>
+      <ion-card-subtitle>{{ conferencia.fecha }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ conferencia.descripcion }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Mostrar Talleres -->
+  <ion-card *ngFor="let taller of filteredTalleres" (click)="goToEventDetails(taller)">
+    <img [src]="taller.imgtar">
+    <ion-card-header>
+      <ion-card-title>{{ taller.titulo }}</ion-card-title>
+      <ion-card-subtitle>{{ taller.fecha }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ taller.descripcion }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Mostrar Concursos -->
+  <ion-card *ngFor="let concurso of filteredConcursos" (click)="goToEventDetails(concurso)">
     <img [src]="concurso.imgconc">
     <ion-card-header>
       <ion-card-title>{{ concurso.titulo }}</ion-card-title>
@@ -33,5 +43,4 @@
       <p>{{ concurso.descripcion }}</p>
     </ion-card-content>
   </ion-card>
-  
-  
+</ion-content>

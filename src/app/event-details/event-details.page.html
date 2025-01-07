@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalles sobre el evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img [src]="event.imgcon || event.imgtar || event.imgconc">
+    <ion-card-header>
+      <ion-card-title>{{ event.titulo }}</ion-card-title>
+      <ion-card-subtitle>{{ event.fecha }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ event.descripcion }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
